@@ -54,9 +54,9 @@ export default class Ex_ShoeShop extends Component {
   };
 
   render() {
-    // let totalNum = this.state.cart.reduce((ttn, item, index) => {
-    //   return (ttn += item.amount);
-    // });
+    let totalNum = this.state.cart.reduce((ttn, item) => {
+      return (ttn += item.amount);
+    }, 0);
     return (
       <div>
         <ModalCartShoe
@@ -67,11 +67,11 @@ export default class Ex_ShoeShop extends Component {
         <div className="text-right mx-5 ">
           <span
             className="text-danger"
-            style={{ cursor: "pointer", fontSize: "17px", fontWeight: "bold" }}
+            style={{ cursor: "pointer", fontSize: "25px", fontWeight: "bold" }}
             data-toggle="modal"
             data-target="#modelId"
           >
-            Cart
+            Cart({totalNum})
           </span>
         </div>
         <ListShoe
