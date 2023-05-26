@@ -35,12 +35,12 @@ export default class Ex_ShoeShop extends Component {
       cart: cloneCart,
     });
   };
-  handleChangeAmount = (id, upDown) => {
-    // upDown === true: tăng số lượng, false: giảm số lượng
+  handleChangeAmount = (id, increDecre) => {
+    // increDecre === true: tăng số lượng, false: giảm số lượng
     let cloneCart = [...this.state.cart];
     let index = cloneCart.findIndex((item) => item.id === id);
     // xử lý tăng giảm
-    if (upDown) {
+    if (increDecre) {
       cloneCart[index].amount += 1;
     } else {
       if (cloneCart[index].amount > 1) {
